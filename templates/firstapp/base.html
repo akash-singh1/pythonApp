@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Blog</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+</head>
+<body>
+	<nav class="navbar navbar-expand bg-dark navbar-custom">
+		<div class="container">
+			<ul class="nav navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">DJANGO</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Product</a></li>
+			</ul>
+
+			<div class="float-right">
+				<form class="form-inline" action="/action_page.php">
+				  <input class="form-control mr-sm-2" type="text" placeholder="Search">
+				  <button class="btn btn-primary" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		{% block body_block %}
+		{% endblock %}
+	</div>
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+  <ul class="nav navbar-nav mr-auto">
+		<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">DJANGO</a></li>
+		<li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+		<li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+	</ul>
+</nav>	 -->
+</body>
+<script type="text/javascript" src="{% static 'styles/bootstrap4/jquery.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js/app.js' %}"></script> -->
+{% block javascript %}{% endblock %}
+</html>

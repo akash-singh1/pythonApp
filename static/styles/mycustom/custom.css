@@ -1,0 +1,69 @@
+
+/* change the background color */
+.navbar-custom,.loginform {
+    background-color: #F8F9FA;
+}
+
+.loginform {
+    background-color: #F8F9FA;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+}
+/* change the brand and text color */
+/*.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #1E1E1E;
+    padding: 0.8rem 1rem;
+}*/
+/* change the link color and add padding for height */
+.navbar-custom .navbar-nav .nav-link {
+    color: #1E1E1E;
+    padding: 1rem 1rem;
+    margin-bottom: : 1rem;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #1E1E1E;
+    background-color: #E4E6E8; /* add background-color to active links */
+}
+
+
+html,
+body {
+  height: 100%
+}
+
+.container-fluid {
+padding: 0 !important;
+height: 100%;
+/*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background: #E9ECEF;
+}
+
+.container {
+/*padding: 0 !important;
+height: 100%;*/
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*section {
+background-size: cover;
+}
+
+div {
+text-align: center;
+}*/
+
+.row
+{
+margin-right: 0px;
+}
+
+.btn-custom {
+    @include button-variant($mynewcolor, #0069D9, #0069D9, lighten($mynewcolor,5%), lighten($mynewcolor, 20%), #0069D9);
+}

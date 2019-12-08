@@ -1,0 +1,21 @@
+{% extends 'firstapp/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+	<!-- <table>
+	{% for product in products %}
+	<tr>
+		<td>{{ product.name }}</td>
+		<td>{{ product.desc }}</td>
+		<td>{{ product.price }}</td>
+		{% if product.offer %}
+		<td><input type="checkbox" name="" value="" checked="checked"></td>
+		{% else %}
+		{% endif %}
+	</tr>
+	{% endfor %}
+	</table> -->
+
+{{response}}
+{% endblock %}

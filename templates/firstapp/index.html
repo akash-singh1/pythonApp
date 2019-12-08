@@ -1,0 +1,38 @@
+{% extends 'firstapp/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block javascript %}
+  <script>
+    $("#id_name").change(function () {
+      var name = ( $(this).val() );
+
+      $.ajax({
+      	url: 'ajax/validate_name',
+      	data: {
+      		'name': name
+      	},
+      	dataType: 'json',
+      	success: function(data){
+      		if(data.is_taken){
+      			alert('A Product with this name is already exist.');
+      		}
+      	}
+      });
+      
+    });
+  </script>
+{% endblock %}
+
+{% block body_block %}
+	<form method="post" enctype="multipart/form-data" class="col-6">
+		{% csrf_token %}
+		{{ product.name|as_crispy_field }}
+		{{ product.img }}
+		{{ product.desc|as_crispy_field }}
+		{{ product.offer }}
+		{{ product.price|as_crispy_field }}
+
+		<input type="submit" class="btn btn-primary" name="" value="Register">
+	</form>
+{% endblock %}
